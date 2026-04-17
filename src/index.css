@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    height: auto;
+  }
+
+  body {
+    @apply bg-arctic-bg text-arctic-ink font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  html.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  html.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  ::selection {
+    background-color: #0E141A;
+    color: #F2F4F5;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-page mx-auto px-4 md:px-8 lg:px-12;
+  }
+}

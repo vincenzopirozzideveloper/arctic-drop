@@ -1,0 +1,20 @@
+services:
+  frontend:
+    container_name: arctic-drop_frontend
+    image: node:20-alpine
+    working_dir: /var/www/app
+    command: sh -c "npm install && npm run dev"
+    volumes:
+      - /root/dev/arctic-drop:/var/www/app
+    networks:
+      arctic_drop_network:
+        ipv4_address: 172.64.0.10
+    restart: unless-stopped
+
+networks:
+  arctic_drop_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.64.0.0/24
+          gateway: 172.64.0.1
