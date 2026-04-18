@@ -49,3 +49,7 @@ coverage
 # Misc
 *.tmp
 *.local
+
+# Wrangler / Cloudflare
+.wrangler
+.dev.vars
